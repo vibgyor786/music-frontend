@@ -42,7 +42,7 @@ const Filter = ({ setFilteredSongs }) => {
     <div className="w-full my-4 px-6 py-4 flex items-center justify-start md:justify-center gap-10">
       <FilterButtons filterData={artists} flag={"Artist"} />
 
-      <div className=" flex items-center gap-6 mx-4">
+      {/* <div className=" flex items-center gap-6 mx-4">
         {filters?.map((data) => (
           <p
             key={data.id}
@@ -54,20 +54,20 @@ const Filter = ({ setFilteredSongs }) => {
             {data.name}
           </p>
         ))}
-      </div>
+      </div> */}
 
       <FilterButtons filterData={allAlbums} flag={"Albums"} />
 
       <FilterButtons filterData={filterByLanguage} flag={"Language"} />
 
-      <motion.i
+      {/* <motion.i
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         whileTap={{ scale: 0.75 }}
         onClick={clearAllFilter}
       >
         <MdClearAll className="text-textColor text-xl cursor-pointer" />
-      </motion.i>
+      </motion.i> */}
     </div>
   );
 };

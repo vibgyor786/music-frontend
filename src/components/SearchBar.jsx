@@ -21,7 +21,7 @@ const SearchBar = () => {
           type="text"
           value={searchTerm}
           className="w-full h-full bg-transparent text-lg text-textColor  border-none outline-none "
-          placeholder="Search here ...."
+          placeholder="Search Your Song Here ...."
           onChange={(e) => setSearchTerm(e.target.value)}
         />
       </div>

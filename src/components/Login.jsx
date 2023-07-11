@@ -7,7 +7,6 @@ import { useNavigate } from "react-router-dom";
 import { validateUser } from "../api";
 import { actionType } from "../Context/reducer";
 import { useStateValue } from "../Context/StateProvider";
-import "./login.css"
 
 const Login = ({ setAuth }) => {
   const firebaseAuth = getAuth(app);
@@ -52,14 +51,27 @@ const Login = ({ setAuth }) => {
   }, []);
 
   return (
-    <div className="relative w-screen h-screen bg-stone-700">
-     
-      <div className="absolute inset-0 bg-darkOverlay flex items-center justify-center p-10" >
-        <div className="w-full md:w-375 p-4 bg-lightOverlay shadow-2xl rounded-md backdrop-blur-md flex flex-col items-center justify-center">
-        <h1>Welcome to music streaming app</h1>
+    <div className="relative w-screen h-screen">
+      <video
+        src={LoginBg}
+        type="video/mp4"
+        autoPlay
+        muted
+        loop
+        className="w-full h-full object-cover"
+      ></video>
+      <div className="absolute inset-0 bg-darkOverlay flex items-center justify-center p-4">
+        <div className="w-full md:w-375 p-4 bg-lightOverlay shadow-2xl h-full rounded-md backdrop-blur-md flex flex-col items-center justify-center">
+          <h1 class="mb-4 text-4xl font-extrabold leading-none tracking-tight text-gray-900 md:text-5xl lg:text-6xl dark:text-white">
+            Welcome
+          </h1>
+          <p class="mb-6 text-lg font-normal text-gray-900 dark:text-white text-center">
+          Welcome to HarmonyTunes, the ultimate destination for music lovers worldwide. Discover, stream, and share your favorite tunes effortlessly 
+          </p>
+          
           <div
             onClick={loginWithGoogle}
-            className="flex items-center justify-center  gap-10 px-4 py-2 rounded-md bg-cardOverlay cursor-pointer hover:bg-card hover:shadow-md duration-100 ease-in-out transition-all"
+            className="flex items-center justify-center  gap-2 px-4 py-2 rounded-md bg-cardOverlay cursor-pointer hover:bg-card hover:shadow-md duration-100 ease-in-out transition-all"
           >
             <FcGoogle className="text-xl" />
             <p>Signin with Google</p>
