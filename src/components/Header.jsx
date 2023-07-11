@@ -37,10 +37,7 @@ const Header = () => {
         <li className="mx-5 text-lg"><NavLink to={'/home'} className={({isActive}) => isActive ? isActiveStyles : isNotActiveStyles}>Home</NavLink></li>
         {/* prettier-ignore */}
         <li className="mx-5 text-lg"><NavLink to={'/musics'} className={({isActive}) => isActive ? isActiveStyles : isNotActiveStyles}>Musics</NavLink></li>
-        {/* prettier-ignore */}
-        <li className="mx-5 text-lg"><NavLink to={'/premium'} className={({isActive}) => isActive ? isActiveStyles : isNotActiveStyles}>Premium</NavLink></li>
-        {/* prettier-ignore */}
-        <li className="mx-5 text-lg"><NavLink to={'/contact'} className={({isActive}) => isActive ? isActiveStyles : isNotActiveStyles}>Contact</NavLink></li>
+  
       </ul>
 
       <div
@@ -59,8 +56,8 @@ const Header = () => {
             {user?.user.name}
           </p>
           <p className="flex items-center gap-2 text-xs text-gray-500 font-normal">
-            Premium Member.{" "}
-            <FaCrown className="text-xm -ml-1 text-yellow-500" />{" "}
+            options
+            {/* <FaCrown className="text-xm -ml-1 text-yellow-500" />{" "} */}
           </p>
         </div>
 
@@ -71,14 +68,12 @@ const Header = () => {
             exit={{ opacity: 0, y: 50 }}
             className="absolute z-10 top-12 right-0 w-275 p-4 gap-4 bg-card shadow-lg rounded-lg backdrop-blur-sm flex flex-col"
           >
-            <NavLink to={"/userProfile"}>
+            {/* <NavLink to={"/userProfile"}>
               <p className="text-base text-textColor hover:font-semibold duration-150 transition-all ease-in-out">
                 Profile
               </p>
-            </NavLink>
-            <p className="text-base text-textColor hover:font-semibold duration-150 transition-all ease-in-out">
-              My Favourites
-            </p>
+            </NavLink> */}
+           
             <hr />
             {user?.user.role === "admin" && (
               <>

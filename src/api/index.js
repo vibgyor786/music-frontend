@@ -1,18 +1,30 @@
 import axios from "axios";
-// const baseURL = "http://localhost:4000/";
-const baseURL = "https://music-backend-psi.vercel.app/";
+const baseURL = "http://localhost:4000/";
+// const baseURL = "https://music-backend-drab.vercel.app/";
 
 export const validateUser = async (token) => {
-  console.log(token)
+  // console.log(token)
+  
   try {
     
     const res = await axios.get(`${baseURL}api/users/login`, {
+      mode: "cors",
       headers: {
         Authorization: "Bearer " + token,
         // 'Access-Control-Allow-Origin': "Authorization",
         "Content-Type": "application/json",
       },
     });
+//     const response = await fetch(`${baseURL}api/users/login`, {
+//     method: "GET",
+//     mode: "cors",
+//     headers: {
+//         Authorization: "Bearer " + token,
+//         "Content-Type": "application/json",
+//     },
+//     // body: JSON.stringify(data),
+// });
+// console.log(response)
     return res.data;
   } catch (error) {
     return null;

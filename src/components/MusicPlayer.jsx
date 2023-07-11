@@ -83,11 +83,11 @@ const MusicPlayer = () => {
           miniPlayer ? "absolute top-40" : "flex relative"
         }`}
       >
-        <img
+        {/* <img
           src={allSongs[song]?.imageURL}
           className="w-40 h-20 object-cover rounded-md"
           alt=""
-        />
+        /> */}
         <div className="flex items-start flex-col">
           <p className="text-xl text-headingColor font-semibold">
             {`${
@@ -124,9 +124,9 @@ const MusicPlayer = () => {
           <motion.i whileTap={{ scale: 0.8 }} onClick={closeMusicPlayer}>
             <IoMdClose className="text-textColor hover:text-headingColor text-2xl cursor-pointer" />
           </motion.i>
-          <motion.i whileTap={{ scale: 0.8 }} onClick={togglePlayer}>
+          {/* <motion.i whileTap={{ scale: 0.8 }} onClick={togglePlayer}>
             <IoArrowRedo className="text-textColor hover:text-headingColor text-2xl cursor-pointer" />
-          </motion.i>
+          </motion.i> */}
         </div>
       </div>
 
