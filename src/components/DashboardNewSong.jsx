@@ -251,8 +251,8 @@ const DashboardNewSong = () => {
 
   return (
     <div className="flex items-center justify-center p-4 border border-gray-300 rounded-md">
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 w-full">
-        <div className="flex flex-col items-center justify-center gap-4">
+      <div className="grid grid-cols-1 lg:grid-cols-1 gap-4 w-full">
+        <div className="flex flex-row items-center justify-center gap-4">
           <input
             type="text"
             placeholder="Type your song name"
@@ -261,7 +261,7 @@ const DashboardNewSong = () => {
             onChange={(e) => setSongName(e.target.value)}
           />
 
-          <div className="flex w-full justify-between flex-wrap items-center gap-4">
+          <div className="flex w-full  flex-wrap items-center gap-4 flex items-stretch items-center">
             <FilterButtons filterData={artists} flag={"Artist"} />
             <FilterButtons filterData={allAlbums} flag={"Albums"} />
             <FilterButtons filterData={filterByLanguage} flag={"Language"} />
@@ -269,7 +269,7 @@ const DashboardNewSong = () => {
           </div>
 
           <div className="flex items-center justify-between gap-2 w-full flex-wrap">
-            <div className="bg-card  backdrop-blur-md w-full lg:w-300 h-300 rounded-md border-2 border-dotted border-gray-300 cursor-pointer">
+            <div className="bg-card  backdrop-blur-md w-full lg:w-300 h-300 rounded-md border-2 border-dotted border-white-300 cursor-pointer bg-stone-600">
               {isImageLoading && <ImageLoader progress={uploadProgress} />}
               {!isImageLoading && (
                 <>
@@ -304,7 +304,7 @@ const DashboardNewSong = () => {
               )}
             </div>
 
-            <div className="bg-card  backdrop-blur-md w-full lg:w-300 h-300 rounded-md border-2 border-dotted border-gray-300 cursor-pointer">
+            <div className="bg-card  backdrop-blur-md w-full lg:w-300 h-300 rounded-md border-2 border-dotted border-gray-300 cursor-pointer bg-stone-600">
               {isAudioLoading && <ImageLoader progress={uploadProgress} />}
               {!isAudioLoading && (
                 <>
@@ -341,7 +341,7 @@ const DashboardNewSong = () => {
               ) : (
                 <motion.button
                   whileTap={{ scale: 0.75 }}
-                  className="px-8 py-2 rounded-md text-white bg-red-600 hover:shadow-lg"
+                  className="px-8 py-2 rounded-md text-white bg-blue-600 hover:shadow-lg"
                   onClick={saveSong}
                 >
                   Send
@@ -426,7 +426,7 @@ export const AddNewArtist = () => {
 
   return (
     <div className="flex items-center justify-evenly w-full flex-wrap">
-      <div className="bg-card  backdrop-blur-md w-full lg:w-225 h-225 rounded-md border-2 border-dotted border-gray-300 cursor-pointer">
+      <div className="bg-card  backdrop-blur-md w-full lg:w-225 h-225 rounded-md border-2 border-dotted border-gray-300 cursor-pointer bg-stone-600">
         {isArtist && <ImageLoader progress={artistProgress} />}
         {!isArtist && (
           <>
@@ -461,7 +461,7 @@ export const AddNewArtist = () => {
         )}
       </div>
 
-      <div className="flex flex-col items-center justify-center gap-4 ">
+      <div className="flex flex-col items-center justify-center gap-4  ">
         <input
           type="text"
           placeholder="Artist Name"
@@ -502,7 +502,7 @@ export const AddNewArtist = () => {
           ) : (
             <motion.button
               whileTap={{ scale: 0.75 }}
-              className="px-8 py-2 rounded-md text-white bg-red-600 hover:shadow-lg"
+              className="px-8 py-2 rounded-md text-white bg-blue-600 hover:shadow-lg"
               onClick={saveArtist}
             >
               Send
@@ -579,7 +579,7 @@ export const AddNewAlbum = () => {
 
   return (
     <div className="flex items-center justify-evenly w-full flex-wrap">
-      <div className="bg-card  backdrop-blur-md w-full lg:w-225 h-225 rounded-md border-2 border-dotted border-gray-300 cursor-pointer">
+      <div className="bg-card  backdrop-blur-md w-full lg:w-225 h-225 rounded-md border-2 border-dotted border-gray-300 cursor-pointer bg-stone-600">
         {isArtist && <ImageLoader progress={artistProgress} />}
         {!isArtist && (
           <>
@@ -629,7 +629,7 @@ export const AddNewAlbum = () => {
           ) : (
             <motion.button
               whileTap={{ scale: 0.75 }}
-              className="px-8 py-2 rounded-md text-white bg-red-600 hover:shadow-lg"
+              className="px-8 py-2 rounded-md text-white bg-blue-600 hover:shadow-lg"
               onClick={saveArtist}
             >
               Send

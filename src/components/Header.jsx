@@ -28,9 +28,9 @@ const Header = () => {
 
   return (
     <header className="flex items-center w-full p-4 md:py-2 md:px-6">
-      <NavLink to={"/"}>
+      {/* <NavLink to={"/"}>
         <img src={Logo} className="w-16" alt="" />
-      </NavLink>
+      </NavLink> */}
 
       <ul className="flex items-center justify-center ml-7">
         {/* prettier-ignore */}
@@ -51,15 +51,15 @@ const Header = () => {
           alt=""
           referrerpolicy="no-referrer"
         />
-        <div className="flex flex-col">
+        {/* <div className="flex flex-col">
           <p className="text-textColor text-lg hover:text-headingColor font-semibold">
             {user?.user.name}
           </p>
           <p className="flex items-center gap-2 text-xs text-gray-500 font-normal">
             options
-            {/* <FaCrown className="text-xm -ml-1 text-yellow-500" />{" "} */}
+            <FaCrown className="text-xm -ml-1 text-yellow-500" />{" "}
           </p>
-        </div>
+        </div> */}
 
         {isMenu && (
           <motion.div
