@@ -1,30 +1,15 @@
 import axios from "axios";
+
 // const baseURL = "http://localhost:4000/";
 const baseURL = "https://music-backend-drab.vercel.app/";
 
 export const validateUser = async (token) => {
-  // console.log(token)
-  
   try {
-    
     const res = await axios.get(`${baseURL}api/users/login`, {
-      mode: "cors",
       headers: {
         Authorization: "Bearer " + token,
-        // 'Access-Control-Allow-Origin': "Authorization",
-        "Content-Type": "application/json",
       },
     });
-//     const response = await fetch(`${baseURL}api/users/login`, {
-//     method: "GET",
-//     mode: "cors",
-//     headers: {
-//         Authorization: "Bearer " + token,
-//         "Content-Type": "application/json",
-//     },
-//     // body: JSON.stringify(data),
-// });
-// console.log(response)
     return res.data;
   } catch (error) {
     return null;
@@ -33,11 +18,7 @@ export const validateUser = async (token) => {
 
 export const getAllArtist = async () => {
   try {
-    const res = await axios.get(`${baseURL}api/artists/getAll`, {headers: {
-      // Authorization: "Bearer " + token,
-      // 'Access-Control-Allow-Origin': "Authorization",
-      "Content-Type": "application/json",
-    }},);
+    const res = await axios.get(`${baseURL}api/artists/getAll`);
     return res.data;
   } catch (error) {
     return null;
@@ -46,11 +27,7 @@ export const getAllArtist = async () => {
 
 export const getAllUsers = async () => {
   try {
-    const res = await axios.get(`${baseURL}api/users/getUsers`,{headers: {
-      // Authorization: "Bearer " + token,
-      // 'Access-Control-Allow-Origin': "Authorization",
-      "Content-Type": "application/json",
-    }});
+    const res = await axios.get(`${baseURL}api/users/getUsers`);
     return res.data;
   } catch (error) {
     return null;
@@ -59,11 +36,7 @@ export const getAllUsers = async () => {
 
 export const removeUser = async (userId) => {
   try {
-    const res = axios.delete(`${baseURL}api/users/delete/${userId}`,{headers: {
-      // Authorization: "Bearer " + token,
-      // 'Access-Control-Allow-Origin': "Authorization",
-      "Content-Type": "application/json",
-    }});
+    const res = axios.delete(`${baseURL}api/users/delete/${userId}`);
     return res;
   } catch (error) {
     return null;
@@ -72,11 +45,7 @@ export const removeUser = async (userId) => {
 
 export const getAllSongs = async () => {
   try {
-    const res = await axios.get(`${baseURL}api/songs/getAll`,{headers: {
-      // Authorization: "Bearer " + token,
-      // 'Access-Control-Allow-Origin': "Authorization",
-      "Content-Type": "application/json",
-    }});
+    const res = await axios.get(`${baseURL}api/songs/getAll`);
     return res.data;
   } catch (error) {
     return null;
@@ -85,11 +54,7 @@ export const getAllSongs = async () => {
 
 export const getAllAlbums = async () => {
   try {
-    const res = await axios.get(`${baseURL}api/albums/getAll`,{headers: {
-      // Authorization: "Bearer " + token,
-      // 'Access-Control-Allow-Origin': "Authorization",
-      "Content-Type": "application/json",
-    }});
+    const res = await axios.get(`${baseURL}api/albums/getAll`);
     return res.data;
   } catch (error) {
     return null;
@@ -98,11 +63,7 @@ export const getAllAlbums = async () => {
 
 export const changingUserRole = async (userId, role) => {
   try {
-    const res = axios.put(`${baseURL}api/users/updateRole/${userId}`,{headers: {
-      // Authorization: "Bearer " + token,
-      // 'Access-Control-Allow-Origin': "Authorization",
-      "Content-Type": "application/json",
-    }}, {
+    const res = axios.put(`${baseURL}api/users/updateRole/${userId}`, {
       data: { role: role },
     });
     return res;
@@ -113,11 +74,7 @@ export const changingUserRole = async (userId, role) => {
 
 export const saveNewArtist = async (data) => {
   try {
-    const res = axios.post(`${baseURL}api/artists/save`,{headers: {
-      // Authorization: "Bearer " + token,
-      // 'Access-Control-Allow-Origin': "Authorization",
-      "Content-Type": "application/json",
-    }}, { ...data });
+    const res = axios.post(`${baseURL}api/artists/save`, { ...data });
     return (await res).data.artist;
   } catch (error) {
     return null;
@@ -126,11 +83,7 @@ export const saveNewArtist = async (data) => {
 
 export const saveNewAlbum = async (data) => {
   try {
-    const res = axios.post(`${baseURL}api/albums/save`,{headers: {
-      // Authorization: "Bearer " + token,
-      // 'Access-Control-Allow-Origin': "Authorization",
-      "Content-Type": "application/json",
-    }}, { ...data });
+    const res = axios.post(`${baseURL}api/albums/save`, { ...data });
     return (await res).data.album;
   } catch (error) {
     return null;
@@ -138,13 +91,8 @@ export const saveNewAlbum = async (data) => {
 };
 
 export const saveNewSong = async (data) => {
-  console.log(data)
   try {
-    const res = axios.post(`${baseURL}api/songs/save`,{headers: {
-      // Authorization: "Bearer " + token,
-      // 'Access-Control-Allow-Origin': "Authorization",
-      "Content-Type": "application/json",
-    }} ,{ ...data });
+    const res = axios.post(`${baseURL}api/songs/save`, { ...data });
     return (await res).data.song;
   } catch (error) {
     return null;
@@ -153,11 +101,7 @@ export const saveNewSong = async (data) => {
 
 export const deleteSongById = async (id) => {
   try {
-    const res = axios.delete(`${baseURL}api/songs/delete/${id}`,{headers: {
-      // Authorization: "Bearer " + token,
-      // 'Access-Control-Allow-Origin': "Authorization",
-      "Content-Type": "application/json",
-    }});
+    const res = axios.delete(`${baseURL}api/songs/delete/${id}`);
     return res;
   } catch (error) {
     return null;
